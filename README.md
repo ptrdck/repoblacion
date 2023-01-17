@@ -27,13 +27,13 @@ Una posible salida de la ejecución sería la siguiente:
 3. Debes introducir correctamente en el proyecto tanto la librería `Entrada` como la `JUnit5` para utilizarla posteriormente.
 4. Los paquetes en los que se encuentren las diferentes clases deberán ser los indicados en el diagrama de clases.
 
-####Enumerado Especie
+#### Enumerado Especie
 1. Crea un enumerado llamado `Especie` que contenga los literales indicados en el diagrama de clases. Los literales estarán parametrizados y a cada uno le pasaremos la representación en cadena de los mismos: los nombres de las especies (álamo, encina, castaño, ciprés, pino piñonero, etc.).
 2. Crea el atributo `cadenaAMostrar` (String).
 3. Crea el **constructor** con la visibilidad adecuada, que almacenará en el atributo anterior la cadena que se le pase por parámetro. 
 4. Crea el método `toString` que devolverá la representación en forma de cadena del literal. Realiza un commit con la creación de este enumerado.
 
-####Clase `Posicion`
+#### Clase `Posicion`
 
 1. Crea la clase Posicion. Crea los atributos `x` e `y` del tipo y la visibilidad indicados.
 2. Crea los métodos `get`.
