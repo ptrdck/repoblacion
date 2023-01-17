@@ -27,7 +27,7 @@ Una posible salida de la ejecución sería la siguiente:
 3. Debes introducir correctamente en el proyecto tanto la librería `Entrada` como la `JUnit5` para utilizarla posteriormente.
 4. Los paquetes en los que se encuentren las diferentes clases deberán ser los indicados en el diagrama de clases.
 
-#### Enumerado Especie
+#### Enumerado `Especie`
 1. Crea un enumerado llamado `Especie` que contenga los literales indicados en el diagrama de clases. Los literales estarán parametrizados y a cada uno le pasaremos la representación en cadena de los mismos: los nombres de las especies (álamo, encina, castaño, ciprés, pino piñonero, etc.).
 2. Crea el atributo `cadenaAMostrar` (String).
 3. Crea el **constructor** con la visibilidad adecuada, que almacenará en el atributo anterior la cadena que se le pase por parámetro. 
@@ -42,14 +42,14 @@ Una posible salida de la ejecución sería la siguiente:
 5. Crea el método distancia que aceptará otra posición como parámetro y si es distinta de null devolverá la distancia entre la posición en cuestión y la pasada por parámetro y en caso contrario lanzará la excepción `NullPointerException`.
 6. Crea el método `toString` que devolverá un `String` y será la representación de la posición (**x=valorX, y=valorY**). Se restringirán los decimales a tres. Realiza un commit con la creación de esta clase.
 
-#### Clase Arbol
+#### Clase `Arbol`
 1. Crea la clase `Arbol` cuyos atributos serán una especie (del tipo enumerado `Especie`) y posicion (de la clase `Posicion`), con la visibilidad adecuada.
 2. Crea los métodos `get` y `set` para cada atributo con la visibilidad adecuada. Los métodos `set` siempre comprobarán la validez de los parámetros pasados y si no son correctos deberá lanzar la excepción adecuada con el mensaje adecuado.
 3. Crea un **constructor** para la clase que acepte como parámetros especie y posición (utiliza los métodos set creados anteriormente).
 4. Crea el **constructor copia**
 5. Crea el método `toString` que devuelva un `String` que será la representación de dicho objeto (especie y posición). Realiza un commit con la creación de esta clase.
 
-#### Clase Bosque
+#### Clase `Bosque`
 
 1. Crea la clase `Bosque` cuyos atributos y constantes serán las indicados en el diagrama de clases. Su tipo y visibilidad deben ser los indicados.
 2. Crea los métodos `get` y `set` para cada atributo con la visibilidad adecuada. Los métodos `set` siempre comprobarán la validez de los parámetros pasados y si no son correctos deberá lanzar la excepción adecuada con el mensaje adecuado.
