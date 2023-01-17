@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_bFD98HmCEe2bgdVDuoLjng" name="uml">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_bHTZoHmCEe2bgdVDuoLjng">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_u59r0HmCEe2bgdVDuoLjng" name="Repoblacion">
+      <packagedElement xmi:type="uml:Package" xmi:id="_u8LSUHmCEe2bgdVDuoLjng" name="repoblacion">
+        <packagedElement xmi:type="uml:Package" xmi:id="_u8MgcHmCEe2bgdVDuoLjng" name="modelo"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_0Vuw8HmCEe2bgdVDuoLjng" name="vista"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_u8jFwHmCEe2bgdVDuoLjng" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_u8js0HmCEe2bgdVDuoLjng" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_u8kT4HmCEe2bgdVDuoLjng" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_u8k68HmCEe2bgdVDuoLjng" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_yA8q4HmCEe2bgdVDuoLjng" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_yA8q4XmCEe2bgdVDuoLjng" name="Random"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wvMIEHmCEe2bgdVDuoLjng" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_wvMvIHmCEe2bgdVDuoLjng" name="primitivetype">
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_wvNWMHmCEe2bgdVDuoLjng" name="double"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_yAy54HmCEe2bgdVDuoLjng" name="int"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_crn2oHmDEe2bgdVDuoLjng" name="repoblacion">
+      <packagedElement xmi:type="uml:Class" xmi:id="_1ZjlcHmCEe2bgdVDuoLjng" name="MainApp" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1Zn24HmCEe2bgdVDuoLjng" name="bosque" visibility="private" isStatic="true" type="_yAxrwHmCEe2bgdVDuoLjng" isUnique="false" aggregation="composite" association="_joyVsHmGEe2bgdVDuoLjng"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1ZqTIHmCEe2bgdVDuoLjng" name="main" specification="_1Zod8HmCEe2bgdVDuoLjng">
+          <language>JAVA</language>
+          <body>
+    int anchura = Consola.leerAnchura();
+    int altura = Consola.leerAltura();
+    do {
+        int poblacion = Consola.leePoblacion();
+        try {
+            bosque = new Bosque(anchura, altura, poblacion);
+        } catch (IllegalArgumentException e) {
+            System.out.printf(&quot;ERROR: %s%n&quot;, e.getMessage());
+        }
+    } while (bosque == null);
+    bosque.realizarCalculos();
+    System.out.printf(&quot;Árbol más cercano: %s%n&quot;, bosque.getArbolMasCentrado());
+    System.out.printf(&quot;Árbol más alejado: %s%n&quot;, bosque.getArbolMasAlejado());
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1Zod8HmCEe2bgdVDuoLjng" name="main" visibility="public" isStatic="true" method="_1ZqTIHmCEe2bgdVDuoLjng">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1ZpFAHmCEe2bgdVDuoLjng" name="args" type="_u8k68HmCEe2bgdVDuoLjng">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1ZpFAXmCEe2bgdVDuoLjng"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1ZpsEHmCEe2bgdVDuoLjng" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_cLLcAHmDEe2bgdVDuoLjng" name="utilidades">
+        <packagedElement xmi:type="uml:Class" xmi:id="_0Vv_EHmCEe2bgdVDuoLjng" name="Consola" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0VzCYHmCEe2bgdVDuoLjng" name="Consola" specification="_0Vv_EXmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+// No se pueden crear instancias de una clase de utilidades
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0V0QgHmCEe2bgdVDuoLjng" name="leerAnchura" specification="_0VzpcHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    int anchura;
+    do {
+        System.out.print(&quot;Introduce la anchura del bosque: &quot;);
+        anchura = Entrada.entero();
+    } while (anchura &lt; Bosque.MINIMO || anchura > Bosque.MAX_ANCHURA);
+    return anchura;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0V03kHmCEe2bgdVDuoLjng" name="leerAltura" specification="_0V0QgXmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    int altura;
+    do {
+        System.out.print(&quot;Introduce la altura del bosque: &quot;);
+        altura = Entrada.entero();
+    } while (altura &lt; Bosque.MINIMO || altura > Bosque.MAX_ALTUARA);
+    return altura;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0V1eoXmCEe2bgdVDuoLjng" name="leePoblacion" specification="_0V03kXmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    int poblacion;
+    do {
+        System.out.print(&quot;Introduce la población de especies: &quot;);
+        poblacion = Entrada.entero();
+    } while (poblacion &lt;= 0);
+    return poblacion;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_0Vv_EXmCEe2bgdVDuoLjng" name="Consola" visibility="private" method="_0VzCYHmCEe2bgdVDuoLjng"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_0VzpcHmCEe2bgdVDuoLjng" name="leerAnchura" visibility="public" isStatic="true" method="_0V0QgHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_0VzpcXmCEe2bgdVDuoLjng" type="_yAy54HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_0V0QgXmCEe2bgdVDuoLjng" name="leerAltura" visibility="public" isStatic="true" method="_0V03kHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_0V0QgnmCEe2bgdVDuoLjng" type="_yAy54HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_0V03kXmCEe2bgdVDuoLjng" name="leePoblacion" visibility="public" isStatic="true" method="_0V1eoXmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_0V1eoHmCEe2bgdVDuoLjng" type="_yAy54HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_bj9D8HmDEe2bgdVDuoLjng" name="modelo">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Xb07gHmEEe2bgdVDuoLjng" annotatedElement="_u8O8sHmCEe2bgdVDuoLjng">
+          <body>-String cadenaAmostrar;
+----------------------------------
+-Especie(cadenaAMostrar: String)
++toString(): String</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wu8QcHmCEe2bgdVDuoLjng" name="Posicion" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_wvNWMXmCEe2bgdVDuoLjng" name="x" visibility="private" type="_wvNWMHmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_wvN9QHmCEe2bgdVDuoLjng" name="y" visibility="private" type="_wvNWMHmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wvVSAHmCEe2bgdVDuoLjng" name="Posicion">
+            <language>JAVA</language>
+            <body>
+    this.x = x;
+    this.y = y;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wvWgIXmCEe2bgdVDuoLjng" name="getX" specification="_wvV5EHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return x;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wvXuQXmCEe2bgdVDuoLjng" name="getY" specification="_wvXHMHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return y;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wvZjcHmCEe2bgdVDuoLjng" name="distancia" specification="_wvYVUHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return Math.sqrt(Math.pow(posicion.getX() - x, 2) + Math.pow(posicion.getY() - y, 2));
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wvaxkHmCEe2bgdVDuoLjng" name="toString" specification="_wvZjcXmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return String.format(&quot;x=%5.3f, y=%5.3f&quot;, x, y);
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_wvOkUHmCEe2bgdVDuoLjng" name="Posicion" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvUq8HmCEe2bgdVDuoLjng" name="x" type="_wvNWMHmCEe2bgdVDuoLjng"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvUq8XmCEe2bgdVDuoLjng" name="y" type="_wvNWMHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_N8IDcJT6Ee2E1rflSQDmCA" name="Posicion">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_bprYkJT6Ee2E1rflSQDmCA" name="p" type="_wu8QcHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PcfC8JT6Ee2E1rflSQDmCA" name="setX" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ip4E4JT6Ee2E1rflSQDmCA" name="x" type="_wvNWMHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_wvV5EHmCEe2bgdVDuoLjng" name="getX" visibility="public" method="_wvWgIXmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvWgIHmCEe2bgdVDuoLjng" type="_wvNWMHmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Qe2e4JT6Ee2E1rflSQDmCA" name="setY" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_2qBZcJT6Ee2E1rflSQDmCA" name="y" type="_wvNWMHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_wvXHMHmCEe2bgdVDuoLjng" name="getY" visibility="public" method="_wvXuQXmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvXuQHmCEe2bgdVDuoLjng" type="_wvNWMHmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_wvYVUHmCEe2bgdVDuoLjng" name="distancia" visibility="public" method="_wvZjcHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvYVUXmCEe2bgdVDuoLjng" type="_wvNWMHmCEe2bgdVDuoLjng" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvY8YHmCEe2bgdVDuoLjng" name="posicion" type="_wu8QcHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_wvZjcXmCEe2bgdVDuoLjng" name="toString" visibility="public" method="_wvaxkHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_wvaKgHmCEe2bgdVDuoLjng" type="_u8k68HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_yAxrwHmCEe2bgdVDuoLjng" name="Bosque" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yAy54XmCEe2bgdVDuoLjng" name="MAX_ANCHURA" visibility="public" isLeaf="true" isStatic="true" type="_yAy54HmCEe2bgdVDuoLjng" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_yAzg8HmCEe2bgdVDuoLjng" name="defaultValue">
+              <language>JAVA</language>
+              <body>1000</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yAzg8XmCEe2bgdVDuoLjng" name="MAX_ALTURA" visibility="public" isLeaf="true" isStatic="true" type="_yAy54HmCEe2bgdVDuoLjng" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_yA0IAHmCEe2bgdVDuoLjng" name="defaultValue">
+              <language>JAVA</language>
+              <body>500</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yA0vEHmCEe2bgdVDuoLjng" name="MINIMO" visibility="public" isLeaf="true" isStatic="true" type="_yAy54HmCEe2bgdVDuoLjng" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_yA0vEXmCEe2bgdVDuoLjng" name="defaultValue">
+              <language>JAVA</language>
+              <body>10</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yA1WIHmCEe2bgdVDuoLjng" name="ancho" visibility="private" type="_yAy54HmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yA19MHmCEe2bgdVDuoLjng" name="alto" visibility="private" type="_yAy54HmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yA7cwHmCEe2bgdVDuoLjng" name="arboles" visibility="private" type="_yA2kQHmCEe2bgdVDuoLjng" isUnique="false" aggregation="composite" association="_ZBuQYHmGEe2bgdVDuoLjng">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yA8D0HmCEe2bgdVDuoLjng"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yA8D0XmCEe2bgdVDuoLjng" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yBAVQHmCEe2bgdVDuoLjng" name="generador" visibility="private" type="_yA8q4XmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yBA8UHmCEe2bgdVDuoLjng" name="arboMasCentrado" visibility="private" type="_yA2kQHmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yBBjYHmCEe2bgdVDuoLjng" name="arbolMasAlejado" visibility="private" type="_yA2kQHmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_HC2zoJT8Ee2E1rflSQDmCA" name="MAX_ESPECIES" visibility="public" isStatic="true" type="_yAy54HmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yBIREHmCEe2bgdVDuoLjng" name="Bosque" specification="_yBBjYXmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    if (ancho &lt; MINIMO || ancho > MAX_ANCHURA) {
+        throw new IllegalArgumentException(&quot;Anchura no váida.&quot;);
+    } else if (alto &lt; MINIMO || alto > MAX_ALTUARA) {
+        throw new IllegalArgumentException(&quot;Altura no válida.&quot;);
+    } else if (poblacion &lt;= 0) {
+        throw new IllegalArgumentException(&quot;La pobalción debe ser mayor que cero.&quot;);
+    } else if (poblacion >= 2 * (ancho + alto)) {
+        throw new IllegalArgumentException(&quot;La poblaicón no puede superar el perímetro del bosque.&quot;);
+    }
+    this.alto = alto;
+    this.ancho = ancho;
+    generador = new Random();
+    arboles = new Arbol[poblacion];
+    repoblar();
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yBI4IHmCEe2bgdVDuoLjng" name="repoblar" specification="_yBIREXmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    for (int i = 0; i &lt; arboles.length; i++) {
+        double x = (generador.nextDouble() * ancho + 1) / 2;
+        double y = (generador.nextDouble() * alto + 1) / 2;
+        int ordinalEspecie = generador.nextInt(Especie.values().length);
+        Especie especie = Especie.values()[ordinalEspecie];
+        arboles[i] = new Arbol(especie, new Posicion(x, y));
+    }
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yBKtUHmCEe2bgdVDuoLjng" name="realizarCalculos" specification="_yBKGQHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    Posicion centro = new Posicion(0, 0);
+    double minimaDistancia = Double.MAX_VALUE;
+    double maximaDistancia = Double.MIN_VALUE;
+    for (int i = 0; i &lt; arboles.length; i++) {
+        double distancia = centro.distancia(arboles[i].getPosicion());
+        if (distancia > maximaDistancia) {
+            maximaDistancia = distancia;
+            arbolMasAlejado = arboles[i];
+        }
+        if (distancia &lt; minimaDistancia) {
+            minimaDistancia = distancia;
+            arboMasCentrado = arboles[i];
+        }
+    }
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yBL7cHmCEe2bgdVDuoLjng" name="getArbolMasCentrado" specification="_yBLUYHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return arboMasCentrado;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yBNJkHmCEe2bgdVDuoLjng" name="getArbolMasAlejado" specification="_yBMigHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return arbolMasAlejado;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_yBBjYXmCEe2bgdVDuoLjng" name="Bosque" visibility="public" method="_yBIREHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_yBGb4HmCEe2bgdVDuoLjng" name="ancho" type="_yAy54HmCEe2bgdVDuoLjng"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_yBHC8HmCEe2bgdVDuoLjng" name="alto" type="_yAy54HmCEe2bgdVDuoLjng"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_yBHqAHmCEe2bgdVDuoLjng" name="poblacion" type="_yAy54HmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_yBIREXmCEe2bgdVDuoLjng" name="repoblar" visibility="private" method="_yBI4IHmCEe2bgdVDuoLjng"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_yBKGQHmCEe2bgdVDuoLjng" name="realizarCalculos" visibility="public" method="_yBKtUHmCEe2bgdVDuoLjng"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_yBLUYHmCEe2bgdVDuoLjng" name="getArbolMasCentrado" visibility="public" method="_yBL7cHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_yBLUYXmCEe2bgdVDuoLjng" type="_yA2kQHmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_yBMigHmCEe2bgdVDuoLjng" name="getArbolMasAlejado" visibility="public" method="_yBNJkHmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_yBMigXmCEe2bgdVDuoLjng" type="_yA2kQHmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Lbo8UJT9Ee2E1rflSQDmCA" name="duplicaBosque" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Kz8YQJT_Ee2E1rflSQDmCA" type="_yA2kQHmCEe2bgdVDuoLjng" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Uz5aQJT_Ee2E1rflSQDmCA"/>
+              <upperValue xmi:type="uml:LiteralString" xmi:id="_WopVYJT_Ee2E1rflSQDmCA" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PqosUJT9Ee2E1rflSQDmCA" name="checkPoblacion">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_dUeJoJT-Ee2E1rflSQDmCA" name="poblacion" type="_yAy54HmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_SftcAJT9Ee2E1rflSQDmCA" name="getAncho">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_W_5NMJT-Ee2E1rflSQDmCA" type="_yAy54HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TkFDEJT9Ee2E1rflSQDmCA" name="setAncho">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQpP0JT-Ee2E1rflSQDmCA" name="ancho" type="_yAy54HmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_VzAYwJT9Ee2E1rflSQDmCA" name="getAlto">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_PLxwoJT-Ee2E1rflSQDmCA" type="_yAy54HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_WtOlUJT9Ee2E1rflSQDmCA" name="setAlto">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_KCkbIJT-Ee2E1rflSQDmCA" name="alto" type="_yAy54HmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_3CwiMJT9Ee2E1rflSQDmCA" name="toString">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="__rUTcJT9Ee2E1rflSQDmCA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_yA2kQHmCEe2bgdVDuoLjng" name="Arbol" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zQAfAHmCEe2bgdVDuoLjng" name="especie" visibility="private" type="_u8O8sHmCEe2bgdVDuoLjng" isUnique="false" aggregation="composite" association="_6fLUEHmFEe2bgdVDuoLjng"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zQEJYHmCEe2bgdVDuoLjng" name="posicion" visibility="private" type="_wu8QcHmCEe2bgdVDuoLjng" isUnique="false" aggregation="composite" association="_77VJAHmFEe2bgdVDuoLjng"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zQIa0XmCEe2bgdVDuoLjng" name="Arbol" specification="_zQEwcHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    setEspecie(especie);
+    setPosicion(posicion);
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zQJo8HmCEe2bgdVDuoLjng" name="getEspecie" specification="_zQJB4HmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return especie;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zQK3EXmCEe2bgdVDuoLjng" name="setEspecie" specification="_zQKQAHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    if (especie == null) {
+        throw new NullPointerException(&quot;La especie no puede ser nula.&quot;);
+    }
+    this.especie = especie;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zQLeInmCEe2bgdVDuoLjng" name="getPosicion" specification="_zQLeIHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return posicion;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zQMsQXmCEe2bgdVDuoLjng" name="setPosicion" specification="_zQMFMHmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    if (posicion == null) {
+        throw new NullPointerException(&quot;La posición no puede ser nula.&quot;);
+    }
+    this.posicion = posicion;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zQNTUXmCEe2bgdVDuoLjng" name="toString" specification="_zQMsQnmCEe2bgdVDuoLjng">
+            <language>JAVA</language>
+            <body>
+    return String.format(&quot;especie=%s, posicion=%s&quot;, especie, posicion);
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zQEwcHmCEe2bgdVDuoLjng" name="Arbol" visibility="public" method="_zQIa0XmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQHzwHmCEe2bgdVDuoLjng" name="especie" type="_u8O8sHmCEe2bgdVDuoLjng"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQIa0HmCEe2bgdVDuoLjng" name="posicion" type="_wu8QcHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_LU9XcJT7Ee2E1rflSQDmCA" name="Arbol">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_XYDV4JT7Ee2E1rflSQDmCA" name="a" type="_yA2kQHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zQJB4HmCEe2bgdVDuoLjng" name="getEspecie" visibility="public" method="_zQJo8HmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQJB4XmCEe2bgdVDuoLjng" type="_u8O8sHmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zQKQAHmCEe2bgdVDuoLjng" name="setEspecie" visibility="private" method="_zQK3EXmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQK3EHmCEe2bgdVDuoLjng" name="especie" type="_u8O8sHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zQLeIHmCEe2bgdVDuoLjng" name="getPosicion" visibility="public" method="_zQLeInmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQLeIXmCEe2bgdVDuoLjng" type="_wu8QcHmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zQMFMHmCEe2bgdVDuoLjng" name="setPosicion" visibility="private" method="_zQMsQXmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQMsQHmCEe2bgdVDuoLjng" name="posicion" type="_wu8QcHmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zQMsQnmCEe2bgdVDuoLjng" name="toString" visibility="public" method="_zQNTUXmCEe2bgdVDuoLjng">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQNTUHmCEe2bgdVDuoLjng" type="_u8k68HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_u8O8sHmCEe2bgdVDuoLjng" name="Especie" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_u_cBsHmCEe2bgdVDuoLjng" name="cadenaAMostrar" visibility="private" type="_u8k68HmCEe2bgdVDuoLjng" isUnique="false"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_u_fFAHmCEe2bgdVDuoLjng" name="Especie" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_u_oO8HmCEe2bgdVDuoLjng" name="cadenaAMostrar" type="_u8k68HmCEe2bgdVDuoLjng"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_u_rSQHmCEe2bgdVDuoLjng" name="toString" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_u_tugHmCEe2bgdVDuoLjng" type="_u8k68HmCEe2bgdVDuoLjng" direction="return"/>
+          </ownedOperation>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8RY8HmCEe2bgdVDuoLjng" name="ALAMO">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8WRcHmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;álamo&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8XfkHmCEe2bgdVDuoLjng" name="ENCINA">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8XfkXmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;encina&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8ZUwHmCEe2bgdVDuoLjng" name="CASTANO">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8Z70HmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;castaño&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8bJ8HmCEe2bgdVDuoLjng" name="CIPRES">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8bxAHmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;cirpés&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8c_IHmCEe2bgdVDuoLjng" name="PINO">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8dmMHmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;pino pinñonero&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8fbYHmCEe2bgdVDuoLjng" name="ROBLE">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8gCcHmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;roble mediterráneo&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u8hQkHmCEe2bgdVDuoLjng" name="OLIVO">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_u8h3oHmCEe2bgdVDuoLjng" name="specification">
+              <language>JAVA</language>
+              <body>&quot;olivo&quot;</body>
+            </specification>
+          </ownedLiteral>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_6fLUEHmFEe2bgdVDuoLjng" name="A_especie_arbol" memberEnd="_zQAfAHmCEe2bgdVDuoLjng _6fO-cHmFEe2bgdVDuoLjng">
+          <ownedEnd xmi:type="uml:Property" xmi:id="_6fO-cHmFEe2bgdVDuoLjng" name="arbol" type="_yA2kQHmCEe2bgdVDuoLjng" association="_6fLUEHmFEe2bgdVDuoLjng">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6fPlgHmFEe2bgdVDuoLjng"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6fPlgXmFEe2bgdVDuoLjng" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_77VJAHmFEe2bgdVDuoLjng" name="A_posicion_arbol" memberEnd="_zQEJYHmCEe2bgdVDuoLjng _77W-MHmFEe2bgdVDuoLjng">
+          <ownedEnd xmi:type="uml:Property" xmi:id="_77W-MHmFEe2bgdVDuoLjng" name="arbol" type="_yA2kQHmCEe2bgdVDuoLjng" association="_77VJAHmFEe2bgdVDuoLjng">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_77XlQHmFEe2bgdVDuoLjng"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_77XlQXmFEe2bgdVDuoLjng" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_ZBuQYHmGEe2bgdVDuoLjng" name="A_arboles_bosque" memberEnd="_yA7cwHmCEe2bgdVDuoLjng _ZBwsoHmGEe2bgdVDuoLjng">
+          <ownedEnd xmi:type="uml:Property" xmi:id="_ZBwsoHmGEe2bgdVDuoLjng" name="bosque" type="_yAxrwHmCEe2bgdVDuoLjng" association="_ZBuQYHmGEe2bgdVDuoLjng">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZBwsoXmGEe2bgdVDuoLjng"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZBxTsHmGEe2bgdVDuoLjng" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_joyVsHmGEe2bgdVDuoLjng" name="A_bosque_mainApp" memberEnd="_1Zn24HmCEe2bgdVDuoLjng _jo0K4HmGEe2bgdVDuoLjng">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_jo0K4HmGEe2bgdVDuoLjng" name="mainApp" type="_1ZjlcHmCEe2bgdVDuoLjng" association="_joyVsHmGEe2bgdVDuoLjng">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jo0x8HmGEe2bgdVDuoLjng"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jo0x8XmGEe2bgdVDuoLjng" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_u6yLMHmCEe2bgdVDuoLjng">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u60AYHmCEe2bgdVDuoLjng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_u7XaAHmCEe2bgdVDuoLjng">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u7YoIHmCEe2bgdVDuoLjng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_u7jnQHmCEe2bgdVDuoLjng">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u7k1YHmCEe2bgdVDuoLjng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_u_Y-YHmCEe2bgdVDuoLjng" name="java.lang.String" base_Classifier="_u8k68HmCEe2bgdVDuoLjng"/>
+  <standard:Create xmi:id="_u_kkkHmCEe2bgdVDuoLjng" base_BehavioralFeature="_u_fFAHmCEe2bgdVDuoLjng"/>
+  <standard:Create xmi:id="_wvS1wHmCEe2bgdVDuoLjng" base_BehavioralFeature="_wvOkUHmCEe2bgdVDuoLjng"/>
+  <PapyrusJava:External xmi:id="_yA6OoHmCEe2bgdVDuoLjng" name="Arbol" base_Classifier="_yA2kQHmCEe2bgdVDuoLjng"/>
+  <PapyrusJava:External xmi:id="_yA_uMHmCEe2bgdVDuoLjng" name="java.util.Random" base_Classifier="_yA8q4XmCEe2bgdVDuoLjng"/>
+  <standard:Create xmi:id="_yBF00HmCEe2bgdVDuoLjng" base_BehavioralFeature="_yBBjYXmCEe2bgdVDuoLjng"/>
+  <PapyrusJava:External xmi:id="_zP_38HmCEe2bgdVDuoLjng" name="Especie" base_Classifier="_u8O8sHmCEe2bgdVDuoLjng"/>
+  <PapyrusJava:External xmi:id="_zQDiUHmCEe2bgdVDuoLjng" name="Posicion" base_Classifier="_wu8QcHmCEe2bgdVDuoLjng"/>
+  <standard:Create xmi:id="_zQHMsHmCEe2bgdVDuoLjng" base_BehavioralFeature="_zQEwcHmCEe2bgdVDuoLjng"/>
+  <standard:Create xmi:id="_0VybUHmCEe2bgdVDuoLjng" base_BehavioralFeature="_0Vv_EXmCEe2bgdVDuoLjng"/>
+  <PapyrusJava:External xmi:id="_1ZnP0HmCEe2bgdVDuoLjng" name="repoblacion.modelo.Bosque" base_Classifier="_yAxrwHmCEe2bgdVDuoLjng"/>
+</xmi:XMI>
