@@ -1,5 +1,5 @@
 # Repoblación
-## Profesor: Andrés Rubio del Río
+## Profesor: Juan Antonio Muñoz Almansa
 ## Alumno: 
 
 La tarea va a consistir en simular la repoblación de un bosque de unas determinadas dimensiones.
