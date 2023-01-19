@@ -56,12 +56,12 @@ Una posible salida de la ejecución sería la siguiente:
 3. Crea el **constructor** que acepte los parámetros ancho, alto y población, realice las comprobaciones adecuadas y asigne los valores a los atributos correspondientes o en caso contrario lance la excepción adecuada. El constructor llamará la método `repoblar`.
 4. Crea el método `duplicaBosque` que devuelve una copia del bosque.
 5. Crea el método `checkPoblacion` que comprueba si el parámetro población pasado al constructor es válido. En caso de no serlo, lanzará la excepción adecuada con el mensaje adecuado.
-6. Crea el método `repoblar` que para cada elemento del array de árboles, creará un nuevo árbol de una especie aleatoria y en una posición aleatoria dentro de los límites en x (-ancho/2, ancho/2) e y (-alto/2, alto/2). Este método debe tener presente que, cuando se vaya a crear el árbol:
-  6.1. La especie generada aleatoriamente debe ser compatible con la especie del árbol que le precede en el array (arboles[i-1]).
-  6.2. Que no se tengan ya en el bosque más de **MAX_ESPECIES**.
-7. Crea el método `realizarCalculos` que recorrerá el array de árboles y calculará cuál es el más centrado y el más alejado del centro (punto (0, 0)).
-8. Crea los métodos `getArbolMasCentrado` y `getArbolMasAlejado` que devolverán el árbol más centrado y más alejado anteriormente calculados.
-9. Crea el método `toString` que devolverá un `String` que representará el alto, ancho y la lista de árboles del bosque. Realiza un commit con la realización de esta clase.
+6. Crea el método `repoblar` que para cada elemento del array de árboles, creará un nuevo árbol de una especie aleatoria y en una posición aleatoria dentro de los límites en x (-ancho/2, ancho/2) e y (-alto/2, alto/2). Este método debe tener presente que, cuando se vaya a crear el árbol:  
+    6.1. La especie generada aleatoriamente debe ser compatible con la especie del árbol que le precede en el array (arboles[i-1]).  
+    6.2. Que no se tengan ya en el bosque más de **MAX_ESPECIES**.
+9. Crea el método `realizarCalculos` que recorrerá el array de árboles y calculará cuál es el más centrado y el más alejado del centro (punto (0, 0)).
+10. Crea los métodos `getArbolMasCentrado` y `getArbolMasAlejado` que devolverán el árbol más centrado y más alejado anteriormente calculados.
+11. Crea el método `toString` que devolverá un `String` que representará el alto, ancho y la lista de árboles del bosque. Realiza un commit con la realización de esta clase.
 
 
 #### Clase `Consola`
