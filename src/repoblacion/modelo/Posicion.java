@@ -28,7 +28,8 @@ public class Posicion {
 		setY(p.getY());
 	}
 
-
+	//getters & setters
+	
 	public double getX() 
 	{
 		return x;
@@ -73,7 +74,7 @@ public class Posicion {
 	// Método toString para devolver la posición de un objeto en una cadena. 
 	@Override
 	public String toString() {
-		return "Posicion [x=" + x + ", y=" + y + "]";
+		return "Posicion (x=" + x + ", y=" + y + ")";
 	}
 	
 	
