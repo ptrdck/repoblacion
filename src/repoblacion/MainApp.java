@@ -21,6 +21,9 @@ public class MainApp {
 			
 			Bosque bosque = new Bosque(anchura, altura, poblacion);
 			
+			System.out.println("Arbol más cercano: " + bosque.getArbolMasCentrado());
+			System.out.println("Arbol más alejado " + bosque.getArbolMasAlejado());
+			
 			
 		}catch (Exception e)
 		{
