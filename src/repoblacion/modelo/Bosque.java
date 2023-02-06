@@ -33,6 +33,7 @@ public class Bosque {
 		generador = new Random();
 
 		repoblar();
+		realizarCalculos();
 
 
 	}
@@ -210,29 +211,48 @@ public class Bosque {
 	{
 		//Declaramos e inicializamos la posicion centro del plano.
 		Posicion centro = new Posicion(0,0);
+	
+		
+		//declaramos e inicializamos variables que tomarán el primer elemento de arboles
+		//y calcularán la distancia entre su posición y el centro del plano
+		//Nos servirá de comparación para los ciclos for
+		double distanciaLejana = arboles[0].getPosicion().distancia(centro);
+		double distanciaCercana = arboles[0].getPosicion().distancia(centro);
+		
 
+		//iniciamos un ciclo for each para que vaya calculando las distancias
+		//de cada elemento del array arboles[] y lo compara con las variables inicializadas
 
-		//Declaramos un array donde dejaremos cada distancia de cada arbol creado en nuestro array arboles
-		double[] distancias = new double[arboles.length]  ;
-
-		//iniciamos un ciclo for para que vaya calculando las distancias con el centro y el arbol
-
-		for (int i = 0; i < arboles.length; i++ )
+		for (Arbol distancia : arboles)
 		{
-			//almacenamos la distancia de cada arbol
-			distancias[i] = arboles[i].getPosicion().distancia(centro);
 
-			//comparamos el array de distancias. Si la distancia que se está calculando es mayor a la anterior ya calculada
-			//actualizamos la variable arbolMasAlejado con el índice del arbol sobre el que se calculó
-			if (distancias[i] > distancias[i-1])
+			//Comparamos distancias. Si la distancia que se está calculando es mayor a la anterior ya calculada
+			//actualizamos la variablede lejanía.
+			if (distancia.getPosicion().distancia(centro) > distanciaLejana)
 			{
-				this.arbolMasAlejado = arboles[i];
+				distanciaLejana = distancia.getPosicion().distancia(centro);
+			}// la misma comparación pero a la inversa. Si es menor actualiza la variable de cercanía
+			if (distancia.getPosicion().distancia(centro)  < distanciaCercana)
+			{
+				distanciaCercana = distancia.getPosicion().distancia(centro);
 			}
-			//Si la distancia que se está calculando actualmente es menor a la anterior ya calculada actualizamos
-			// el valor de la variable arbolMasCentrado con el índice del árbol
-			if (distancias[i] < distancias[i-1])
+		}
+		
+		//iniciamos un ciclo for each para volver a recorrer todo el array y nos devuelva el objeto del array
+		//correspondiente a la distancia.
+		for (Arbol arbol : arboles)
+		{
+			//Cuando uno de los objetos coincida con la variable se asignará
+			//caso 1 Arbol más lejano
+			if (arbol.getPosicion().distancia(centro) == distanciaLejana)
 			{
-				this.arbolMasCentrado = arboles[i];
+				this.arbolMasAlejado = arbol;
+			}
+			//caso 2 arbol más cercano
+			if (arbol.getPosicion().distancia(centro) == distanciaCercana)
+			{
+				this.arbolMasCentrado = arbol;
+				
 			}
 		}
 

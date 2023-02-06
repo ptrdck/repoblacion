@@ -66,15 +66,16 @@ public class Posicion {
 			throw new NullPointerException("ERROR: No se puede calcular la distancia a una posición nula.");
 		}
 
-		double distancia = Math.sqrt((Math.pow(getX()-x, 2)) + Math.pow(getY()-y, 2));
+		double distancia = Math.sqrt(Math.pow(posicion.getX()-x, 2) + Math.pow(posicion.getY()-y, 2));
 
 		return distancia;
 	}
 
 	// Método toString para devolver la posición de un objeto en una cadena.
+	//Aplicaremos formato para que el número sea más legible.
 	@Override
 	public String toString() {
-		return "Posicion (x=" + x + ", y=" + y + ")";
+		return "Posicion (x " + String.format("= %5.3f ", x)  + ", y = " + String.format( "%5.3f " , y) + ")";
 	}
 
 
