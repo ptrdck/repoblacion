@@ -25,6 +25,8 @@ public class Consola {
 			{
 				anchuraCorrecta = true;
 			}
+			else
+				System.out.println("La anchura no es correcta, intente nuevamente");
 		} while (anchuraCorrecta = false);
 
 		return anchura;
@@ -44,6 +46,8 @@ public class Consola {
 			{
 				alturaCorrecta = true;
 			}
+			else
+				System.out.println("La altura no es correcta, intente nuevamente");
 		} while (alturaCorrecta = false);
 
 		return altura;
