@@ -1,17 +1,14 @@
 package test.modelo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
-
-
 
 import org.junit.jupiter.api.Test;
 
 import repoblacion.modelo.Posicion;
 
 public class PosicionTest {
-		
+
 	private static final String ERROR_COPIAR_POSICION_NULA = "ERROR: No se puede copiar una posición nula.";
 	private static final String ERROR_DISTANCIA_POSICION_NULA = "ERROR: No se puede calcular la distancia a una posición nula.";
 	private static final String DISTANCIA_DEBERIA_SER_CERO = "ERROR: La distancia debería ser 0 ya que no se puede calcular la distancia de una posición nula.";
@@ -27,7 +24,7 @@ public class PosicionTest {
 	@Test
 	public void constructorPosicionNulaLanzaExcepcion() {
 		Posicion posicion = null;
-		
+
 		try {
 			posicion = new Posicion(null);
 			fail(POSICION_NULA);
@@ -38,17 +35,17 @@ public class PosicionTest {
 			fail(TIPO_NO_CORRECTO);
 		}
 	}
-	
+
 	@Test
 	public void constructorPosicionCorrecta() {
 		Posicion posicion = null;
-		
+
 		posicion = new Posicion(5.0,6.0);
 		assertEquals(5.0, posicion.getX(), POSICION_X_NO_ESPERADA);
 		assertEquals(6.0, posicion.getY(), POSICION_Y_NO_ESPERADA);
-		
+
 	}
-	
+
 	@Test
 	public void distanciaPosicionNulaLanzaExcepcion() {
 		Posicion posicion = null;
@@ -64,23 +61,23 @@ public class PosicionTest {
 			fail(TIPO_NO_CORRECTO);
 		}
 	}
-	
+
 	@Test
 	public void distanciaPosicionCorrecta() {
 		Posicion posicion = null;
 		double d=0.0;
-		
-		
+
+
 			posicion = new Posicion(5,5);
 			d=posicion.distancia(new Posicion (9,8));
 			assertEquals(5.0, d, DISTANCIA_CALCULADA_INCORRECTAMENTE);
 	}
-	
+
 	@Test
 	public void toStringDevuelveLaCadenaEsperada() {
 		Posicion posicion = new Posicion(5.0,5.0);
 
-		
+
 		assertEquals(String.format("x=%5.3f, y=%5.3f", 5.0,5.0), posicion.toString(), CADENA_NO_ESPERADA);
 	}
 

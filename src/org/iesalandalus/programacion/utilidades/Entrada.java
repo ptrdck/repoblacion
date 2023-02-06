@@ -1,4 +1,4 @@
-package repoblacion.utilidades;
+package org.iesalandalus.programacion.utilidades;
 
 import java.io.BufferedReader;
 import java.io.IOException;
