@@ -9,7 +9,7 @@ public class Consola {
 		
 	}
 
-	public int leerAnchura()
+	public static int leerAnchura()
 	{
 		int anchura = 0;
 		boolean anchuraCorrecta = false;
@@ -28,7 +28,7 @@ public class Consola {
 		return anchura;
 	}
 	
-	public int leerAltura()
+	public static int leerAltura()
 	{
 		int altura = 0;
 		boolean alturaCorrecta = false;
@@ -47,7 +47,7 @@ public class Consola {
 		return altura;
 	}
 	
-	public int leerPoblacion()
+	public static int leerPoblacion()
 	{
 		int poblacion = 0;
 		boolean poblacionCorrecta = false;
